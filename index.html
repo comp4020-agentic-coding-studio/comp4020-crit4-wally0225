@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>COMP4020 prototype</title>
+    <title>Random Sound Looper</title>
     <meta
       name="description"
-      content="Replace this with one sentence saying what this page is. A search result and a link preview both show it."
+      content="A browser instrument: ten keys make odd little sounds, and a looper layers up to five takes of what you play."
     />
 
     <!--
@@ -27,11 +27,39 @@
       </nav>
     </header>
     <main>
-      <h1>COMP4020 prototype</h1>
-      <p data-testid="intro">
-        Replace this with your prototype. This week's brief is on the course website;
-        <code>spec/README.md</code> explains how the checks in this repo relate to it.
-      </p>
+      <h1>Random Sound Looper</h1>
+      <p class="invite">Press a key to hear a sound.</p>
+
+      <div class="keyboard" aria-label="Playable keys">
+        <div class="key" data-key="q">Q</div>
+        <div class="key" data-key="w">W</div>
+        <div class="key" data-key="e">E</div>
+        <div class="key" data-key="r">R</div>
+        <div class="key" data-key="t">T</div>
+        <div class="key" data-key="y">Y</div>
+        <div class="key" data-key="u">U</div>
+        <div class="key" data-key="i">I</div>
+        <div class="key" data-key="o">O</div>
+        <div class="key" data-key="p">P</div>
+      </div>
+
+      <div class="transport">
+        <button id="record-btn" type="button">Record</button>
+        <button id="clear-btn" type="button">Clear</button>
+      </div>
+
+      <div class="status" aria-live="polite">
+        <div class="countdown" id="countdown" hidden></div>
+        <div class="layers" id="layers">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <p class="hint">Space = Record / Overdub &middot; Delete = Clear</p>
     </main>
     <script type="module" src="./main.ts"></script>
   </body>

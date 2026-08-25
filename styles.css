@@ -4,13 +4,131 @@ body {
   font-family: system-ui, sans-serif;
   line-height: 1.6;
   color: #1a1a1a;
+  background: #fafafa;
 }
 
 main {
-  max-width: 40rem;
+  max-width: 32rem;
   margin: 0 auto;
+  text-align: center;
 }
 
 a {
   color: #0b5fff;
+}
+
+.invite {
+  color: #555;
+  margin-top: 0;
+}
+
+.keyboard {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.key {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1a1a1a;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: #fff;
+  transition:
+    transform 60ms ease,
+    background 60ms ease;
+  user-select: none;
+}
+
+.key.active {
+  background: #1a1a1a;
+  color: #fff;
+  transform: scale(0.92);
+}
+
+.transport {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 2px solid #1a1a1a;
+  background: #fff;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+#record-btn[data-phase="recording"],
+#record-btn[data-phase="overdubbing"] {
+  background: #d81b3f;
+  border-color: #d81b3f;
+  color: #fff;
+}
+
+#record-btn[data-phase="armed"] {
+  background: #f2a900;
+  border-color: #f2a900;
+  color: #1a1a1a;
+}
+
+#record-btn[data-phase="maxed"] {
+  background: #ddd;
+  border-color: #ddd;
+  color: #777;
+}
+
+.status {
+  min-height: 3.5rem;
+}
+
+.countdown {
+  font-size: 2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.layers {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: 2px solid #1a1a1a;
+  background: transparent;
+}
+
+.dot.filled {
+  background: #1a1a1a;
+}
+
+.layers.maxed .dot.filled {
+  background: #d81b3f;
+  border-color: #d81b3f;
+}
+
+.hint {
+  color: #999;
+  font-size: 0.85rem;
 }
